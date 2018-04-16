@@ -1,5 +1,11 @@
 package pucrs.alest2.t1;
 
+/**
+ * Possíveis cores para os retângulos.
+ * É armazenado um valor do tipo byte e uma string com o nome da cor para cada entrada, para economizar memória (apenas o byte deve ser armazenado nas operações que utilizam este Enum).
+ * @author calebe
+ *
+ */
 public enum Color {
 	AMARELO((byte)1, "amarelo"),
 	AZULCLARO((byte)2, "azul-claro"),
@@ -22,14 +28,27 @@ public enum Color {
 		this.description = description;
 	}
 	
+	/**
+	 * Valor (byte) da cor.
+	 * @return
+	 */
 	public byte value() {
 		return value;
 	}
 	
+	/**
+	 * Nome da cor.
+	 * @return
+	 */
 	public String description() {
 		return description;
 	}
 	
+	/**
+	 * Obtém o valor (byte) correspondente ao nome especificado.
+	 * @param color
+	 * @return
+	 */
 	public static byte byteOf(String color) {
 		for(Color c : values())
 			if(c.description.equals(color))
@@ -38,6 +57,11 @@ public enum Color {
 		return -1;
 	}
 	
+	/**
+	 * Obtém o nome da cor correspondente ao valor (byte) especificado.
+	 * @param value
+	 * @return
+	 */
 	public static String descriptionOf(byte value) {
 		for(Color c : values())
 			if(c.value == value)
@@ -46,6 +70,11 @@ public enum Color {
 		return null;
 	}
 	
+	/**
+	 * Obtém o nome da cor correspondente ao valor especificado.
+	 * @param value
+	 * @return
+	 */
 	public static String descriptionOf(int value) {
 		return descriptionOf((byte)value);
 	}

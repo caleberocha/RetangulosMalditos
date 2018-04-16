@@ -19,7 +19,7 @@ public class CanvasMatrix {
 	public void paint(Retangulo retangulo) {
 		for(int i = retangulo.getCoord().getX1()+1; i <= retangulo.getCoord().getX2(); i++)
 			for(int j = retangulo.getCoord().getY1()+1; j <= retangulo.getCoord().getY2(); j++)
-				matrix[i][j] = Color.byteOf(retangulo.getCor());
+				matrix[i][j] = retangulo.getCorValue();
 	}
 	
 	public Map<String, Long> getCores() {

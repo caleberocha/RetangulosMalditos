@@ -108,6 +108,13 @@ public class Canvas {
 			tree.delete(r.getCoord().getX1());
 	}
 	
+	/**
+	 * Procura por interseções (sobreposições) com o retângulo especificado, e reconstrói os retângulos encontrados, removendo as interseções..
+	 * É utilizado o algoritmo de procura de interseções em retângulos, descrito em
+	 * <a href="https://www.cs.princeton.edu/~rs/AlgsDS07/17GeometricSearch.pdf">https://www.cs.princeton.edu/~rs/AlgsDS07/17GeometricSearch.pdf</a> (página 39) e
+	 * <a href="https://pt.coursera.org/learn/algorithms-part1/lecture/mNiwq/rectangle-intersection">https://pt.coursera.org/learn/algorithms-part1/lecture/mNiwq/rectangle-intersection</a>.
+	 * @param r Retângulo
+	 */
 	private void procuraIntersecoes(Retangulo r) { 
 		for(int key : mengaoTree.keys(r.getCoord().getX1(), r.getCoord().getX2()))
 			intervalTree.put(key, cloneRetangulos(mengaoTree.get(key)));
