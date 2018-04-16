@@ -1,3 +1,4 @@
+package pucrs.alest2.t1;
 /**
  * Retângulo representado na forma de coordenadas, e que tem uma cor.
  * @author calebe

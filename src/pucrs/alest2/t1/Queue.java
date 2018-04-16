@@ -1,3 +1,4 @@
+package pucrs.alest2.t1;
 /******************************************************************************
  *  Compilation:  javac Queue.java
  *  Execution:    java Queue < input.txt
@@ -128,7 +129,7 @@ public class Queue<Item> implements Iterable<Item> {
             s.append(' ');
         }
         return s.toString();
-    } 
+    }
 
     /**
      * Returns an iterator that iterates over the items in this queue in FIFO order.
@@ -140,7 +141,8 @@ public class Queue<Item> implements Iterable<Item> {
     }
 
     // an iterator, doesn't implement remove() since it's optional
-    private class ListIterator<Item> implements Iterator<Item> {
+    @SuppressWarnings("hiding")
+	private class ListIterator<Item> implements Iterator<Item> {
         private Node<Item> current;
 
         public ListIterator(Node<Item> first) {

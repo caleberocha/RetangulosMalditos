@@ -1,3 +1,4 @@
+package pucrs.alest2.t1;
 
 public class Coordenadas {
 	private int x1, y1, x2, y2;

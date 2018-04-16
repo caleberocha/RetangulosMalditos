@@ -1,3 +1,4 @@
+package pucrs.alest2.t1;
 /******************************************************************************
  *  Compilation:  javac RedBlackBST.java
  *  Execution:    java RedBlackBST < input.txt

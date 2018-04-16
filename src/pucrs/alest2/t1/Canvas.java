@@ -1,3 +1,4 @@
+package pucrs.alest2.t1;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -28,7 +29,7 @@ public class Canvas {
 	 * Retorna as áreas ocupadas por cada cor, em ordem decrescente.
 	 * @return
 	 */
-	public HashMap<String, Long> getCores() {
+	public Map<String, Long> getCores() {
 		HashMap<String, Long> cores = new HashMap<>();
 		mengaoTree.values().forEach(rr -> {
 			rr.forEach(r -> {
