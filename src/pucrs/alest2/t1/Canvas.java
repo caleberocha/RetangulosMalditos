@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Canvas {
-	
 	private RedBlackBST<Integer, LinkedHashSet<Retangulo>> mengaoTree;
 	private RedBlackBST<Integer, LinkedHashSet<Retangulo>> intervalTree;
 	
@@ -179,7 +178,7 @@ public class Canvas {
 						   Math.max(r1.getCoord().getY1(), r2.getCoord().getY1()),
 						   Math.min(r1.getCoord().getX2(), r2.getCoord().getX2()),
 						   Math.min(r1.getCoord().getY2(), r2.getCoord().getY2()),
-						   r1.getCor()
+						   r2.getCor()
 						   );
 	}
 	
@@ -234,17 +233,15 @@ public class Canvas {
 	private int[] subtraiIntervalo(int i1x1, int i1x2, int i2x1, int i2x2) {
 		int[] intervalos = new int[] {-1, -1, -1,- 1};
 		
-		if(i1x1 <= i1x2) {
+		if(i1x1 <= i2x1) {
 			intervalos[0] = i1x1;
-			if(i1x2 <= i2x2)
-				intervalos[1] = Math.min(i1x2, i2x1);
-			else {
-				intervalos[1] = i2x1;
+			intervalos[1] = i2x1;
+			if(i1x2 > i2x2) {
 				intervalos[2] = i2x2;
 				intervalos[3] = i1x2;
 			}
 		} else {
-			intervalos[0] = Math.max(i1x1 + 1, i2x2 + 1);
+			intervalos[0] = i2x2;
 			intervalos[1] = i1x2;
 		}
 		
