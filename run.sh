@@ -2,6 +2,7 @@
 set -e
 if [ ! -f build/retangulos.jar ]
 then
+	[ ! -d build ] && mkdir build
 	javac -d bin src/pucrs/alest2/t1/*.java
 	jar cfe build/retangulos.jar pucrs.alest2.t1.Main -C bin pucrs
 fi
