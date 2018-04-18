@@ -233,26 +233,16 @@ public class Canvas {
 	private int[] subtraiIntervalo(int i1x1, int i1x2, int i2x1, int i2x2) {
 		int[] intervalos = new int[] {-1, -1, -1,- 1};
 		
-		if(i1x1 <= i2x1) {
+		if(i1x1 < i2x1) {
 			intervalos[0] = i1x1;
 			intervalos[1] = i2x1;
 			if(i1x2 > i2x2) {
 				intervalos[2] = i2x2;
 				intervalos[3] = i1x2;
 			}
-		} else {
+		} else if(i1x2 > i2x2) {
 			intervalos[0] = i2x2;
 			intervalos[1] = i1x2;
-		}
-		
-		if(intervalos[0] == intervalos[1]) {
-			intervalos[0] = -1;
-			intervalos[1] = -1;
-		}
-		
-		if(intervalos[2] == intervalos[3]) {
-			intervalos[2] = -1;
-			intervalos[3] = -1;
 		}
 		
 		return intervalos;

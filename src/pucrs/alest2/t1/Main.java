@@ -19,9 +19,13 @@ public class Main {
 		CanvasMatrix matrix = null;
 		boolean useMatrix = false;
 		int matrixSize = 0;
+		boolean timeShowed = false;
 		
 		if(args.length == 0) {
-			System.err.println("Arquivo não especificado.");
+			System.err.println("Arquivo não especificado." + System.lineSeparator()
+							 + "USO:" + System.lineSeparator()
+							 + "java -jar retangulos.jar nome_do_arquivo" + System.lineSeparator()
+							 + "java -jar retangulos.jar nome_do_arquivo -useMatrix tamanho_matriz");
 			return;
 		}
 		
@@ -59,6 +63,7 @@ public class Main {
 						matrix.paint(r);
 				}
 				if(n > 0 && n % 1000 == 0) {
+					timeShowed = true;
 					System.out.print(String.format("\r%d linhas processadas em %d ms", n, (System.currentTimeMillis() - startTime)));
 					//System.out.print("\r" + n + " linhas processadas em " + (System.currentTimeMillis() - startTime) + " ms");
 				}
@@ -67,7 +72,9 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("\n");
+		
+		if(timeShowed)
+			System.out.println(System.lineSeparator());
 		
 		//System.out.println(quadro);
 		//System.out.println(quadro.size() + " retângulos inseridos.");
